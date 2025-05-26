@@ -44,7 +44,7 @@ class DecideAction(Node):
         if inputs['tool_calls']:
             calls = []
             for call in inputs['tool_calls'][-5:]:  # Last 5 tool calls
-                calls.append(f"- {call['tool']}: {call['result'][:200]}...")
+                calls.append(f"- {call['tool']}: {call['result']}")
             tool_history = "\nRecent Tool Calls:\n" + "\n".join(calls)
         
         prompt = f"""### SYSTEM
